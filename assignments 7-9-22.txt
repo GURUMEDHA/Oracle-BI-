@@ -1,0 +1,25 @@
+select * from employees
+where salary = (select max(salary) from employees);
+
+select department_id,max(salary) from employees group by department_id;
+
+select department_id, max(salary)
+from employees e
+where e.salary < (select max(salary) from employees b 
+                    where e.department_id = b.department_id)
+group by department_id;
+
+select * from employees where salary in (select max(salary) from employees group by department_id);
+
+select department_id, salary from employees where department_id = 100 order by 1;
+
+select * from employees where salary=(select max(salary) from employees);
+
+ select a.first_name as employee_name,b.state_province as location from employees a inner join emp_details_view b on a.employee_id=b.employee_id where b.state_province like 'Texas';
+ 
+ select count(*) as count,to_char(hire_date,'MON') as months from employees group by to_char(hire_date,'MON');
+ 
+ select count(*) from employees;
+ 
+ select e.first_name as employee_name,b.city as city from employees e , emp_details_view b where e.employee_id=b.employee_id;
+ 
