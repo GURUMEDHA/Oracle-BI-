@@ -1,3 +1,16 @@
+QNS:
+1.WAQ to display all the employees located in New Jersey.
+
+2) WAQ to display number employees joined month wise.
+
+3) WAQ to display highest salary person information.
+
+4) WAQ to display highest salary person information department wise
+
+
+
+
+
 Ans:
 
 1.  select a.first_name as employee_name,b.state_province as location from employees a inner join emp_details_view b on a.employee_id=b.employee_id where b.state_province like 'Texas';
