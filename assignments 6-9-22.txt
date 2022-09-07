@@ -1,5 +1,5 @@
 QNS:
-1.WAQ to display all the employees located in New Jersey.
+1) WAQ to display all the employees located in New Jersey.
 
 2) WAQ to display number employees joined month wise.
 
