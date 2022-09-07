@@ -17,3 +17,4 @@ Table-A				Table-B
 
 ANSWERS: 
 
+1.select to_char(hire_date,'YY') as year,count(*) as count from employees group by to_char(hire_date,'YY')order by 1 ;
