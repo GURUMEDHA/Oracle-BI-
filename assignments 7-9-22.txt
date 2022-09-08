@@ -18,3 +18,17 @@ Table-A				Table-B
 ANSWERS: 
 
 1.select to_char(hire_date,'YY') as year,count(*) as count from employees group by to_char(hire_date,'YY')order by 1 ;
+
+2.select * from employees e
+where 2>= (select count(distinct d.salary) from employees d
+where e.department_id = d.department_id and d.salary >= e.salary);
+
+3.select * from emp cross join dept where emp.dept_id=dept.dept_id;
+
+select * from emp natural join dept;
+
+select e.emp_name,d.dept_name from emp e inner join dept d on e.dept_id=d.dept_id;
+
+select e.emp_name,d.dept_name from emp e left join dept d on e.dept_id=d.dept_id;
+
+select e.emp_name,d.dept_name from emp e right join dept d on e.dept_id=d.dept_id;
