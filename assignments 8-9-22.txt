@@ -1,25 +1,15 @@
-select * from employees
-where salary = (select max(salary) from employees);
+QNS :
 
-select department_id,max(salary) from employees group by department_id;
+1) WAQ to display top salaried emplyees location wise- city?
 
-select department_id, max(salary)
-from employees e
-where e.salary < (select max(salary) from employees b 
-                    where e.department_id = b.department_id)
-group by department_id;
+2) WAQ to display employees based on bonus department wise.
 
-select * from employees where salary in (select max(salary) from employees group by department_id);
 
-select department_id, salary from employees where department_id = 100 order by 1;
+ANS:
 
-select * from employees where salary=(select max(salary) from employees);
+1. select city,salary from emp_details_view
+where (city,salary) in
+(select city,max(salary) from emp_details_view group by city);
 
- select a.first_name as employee_name,b.state_province as location from employees a inner join emp_details_view b on a.employee_id=b.employee_id where b.state_province like 'Texas';
- 
- select count(*) as count,to_char(hire_date,'MON') as months from employees group by to_char(hire_date,'MON');
- 
- select count(*) from employees;
- 
- select e.first_name as employee_name,b.city as city from employees e , emp_details_view b where e.employee_id=b.employee_id;
- 
+2. select department_id,salary+nvl(commission_pct, 0) as bonus from employees a
+where department_id in(select department_id from employees b where a.department_id=b.department_id)
