@@ -1,0 +1,16 @@
+
+
+
+DECLARE
+a number(5):= 85;
+BEGIN
+IF(a>90 and a<100 ) THEN
+dbms_output.put_line('Grade is A');
+elsif (a>80 and a<=90 ) THEN
+dbms_output.put_line('Grade is B');
+elsif (a>70 and a<=80 ) THEN
+dbms_output.put_line('Grade is C');
+else
+dbms_output.put_line('FAIL');
+END IF;
+END;
