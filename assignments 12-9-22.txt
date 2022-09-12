@@ -10,11 +10,11 @@ results varchar2(20);
 BEGIN
 if(num1>=90 and num1<=100) then
 results := 'GRADE A';
-elsif (num1>=80 and num1<=90) then
+elsif (num1>=80 and num1<90) then
 results := 'GRADE B';
-elsif (num1>=70 and num1<=80) then
+elsif (num1>=70 and num1<80) then
 results := 'GRADE C';
-elsif (num1>=60 and num1<=70) then
+elsif (num1>=60 and num1<70) then
 results := 'GRADE B';
 else
 results := 'Fail';
@@ -39,7 +39,7 @@ results := 'GRADE B';
 elsif (num1>=70 and num1<=80) then
 results := 'GRADE C';
 elsif (num1>=60 and num1<=70) then
-results := 'GRADE B';
+results := 'GRADE D';
 else
 results := 'Fail';
 end if;
