@@ -1,0 +1,70 @@
+
+1. Create student grade calculator as function and procedure both.
+
+FUNCTION:
+
+create or replace function grade( num1 IN number)
+return varchar2
+is
+results varchar2(20);
+BEGIN
+if(num1>=90 and num1<=100) then
+results := 'GRADE A';
+elsif (num1>=80 and num1<=90) then
+results := 'GRADE B';
+elsif (num1>=70 and num1<=80) then
+results := 'GRADE C';
+elsif (num1>=60 and num1<=70) then
+results := 'GRADE B';
+else
+results := 'Fail';
+end if;
+return results;
+End;
+
+begin
+dbms_output.put_line(grade(82));
+end;
+
+PROCEDURE:
+
+create or replace procedure grades( num1 IN number)
+is
+results varchar2(20);
+BEGIN
+if(num1>=90 and num1<=100) then
+results := 'GRADE A';
+elsif (num1>=80 and num1<=90) then
+results := 'GRADE B';
+elsif (num1>=70 and num1<=80) then
+results := 'GRADE C';
+elsif (num1>=60 and num1<=70) then
+results := 'GRADE B';
+else
+results := 'Fail';
+end if;
+dbms_output.put_line(results);
+End;
+
+begin 
+grades(93);
+end;
+
+************************************************************************************
+
+2.create procedure for fetching maximum salary employee in department 100.
+
+
+create or replace procedure MaxSalary(Dprt_id IN integer)
+is
+    esalary employees.salary%TYPE;
+begin
+    select max(salary)into esalary from employees where department_id=Dprt_id;
+    dbms_output.put_line(esalary);
+end;
+
+begin
+MaxSalary(100);
+end;
+
+--select salary from employees where department_id like 100; // For CHECK SALARY
