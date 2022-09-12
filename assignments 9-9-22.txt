@@ -2,6 +2,20 @@
 
 
 DECLARE
+    num1 number(10);
+    num2 number(10);
+    message number(10);
+    Begin
+   num1:=10;
+   num2:=20;
+   message := num1 + num2 ;
+   dbms_output.put_line('total' || message);
+   end;
+
+
+
+
+DECLARE
 a number(5):= 85;
 BEGIN
 IF(a>90 and a<100 ) THEN
